@@ -2,7 +2,7 @@
 
 ## Deskripsi Proyek
 
-Proyek ini mengimplementasikan arsitektur data pipeline end-to-end yang mengotomatisasi seluruh siklus hidup data pesanan, mulai dari penarikan data mentah hingga visualisasi bisnis. Sistem melakukan ekstraksi data dari endpoint API e-commerce secara periodik, memproses dan membersihkannya melalui Apache Spark, lalu memuatnya ke ClickHouse sebagai data warehouse untuk kebutuhan analitik. Seluruh orkestrasi berjalan di atas Apache Airflow dalam environment Docker Compose yang terisolasi dan reproducible.
+Proyek ini mengimplementasikan arsitektur data pipeline end-to-end yang mengotomatisasi seluruh siklus hidup data pesanan, mulai dari penarikan data mentah hingga visualisasi bisnis. Sistem melakukan ekstraksi data dari endpoint API e-commerce secara berkala, memproses dan membersihkannya melalui Apache Spark, lalu dimuat ke ClickHouse sebagai data warehouse untuk kebutuhan analitik. Seluruh orkestrasi berjalan di atas Apache Airflow dalam environment Docker Compose yang terisolasi dan reproducible.
 
 ---
 
