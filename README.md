@@ -161,6 +161,10 @@ ORDER BY hour ASC;
 
 Menampilkan distribusi volume pesanan berdasarkan jam dalam sehari untuk mengidentifikasi peak hours dan pola belanja konsumen.
 
+Visualisasi : 
+
+<img width="518" height="246" alt="image" src="https://github.com/user-attachments/assets/eb91780a-86a9-4dc3-bfd2-1f8eed0ece11" />
+
 ### Query 2: Distribusi Departemen (Pie Chart / Bar Chart)
 
 ```sql
@@ -173,6 +177,10 @@ ORDER BY total_products_ordered DESC;
 ```
 
 Memvisualisasikan proporsi produk yang dipesan dari masing-masing departemen untuk memahami kategori mana yang paling dominan.
+
+Visualisasi :
+
+<img width="824" height="387" alt="image" src="https://github.com/user-attachments/assets/e9e79535-c573-4d3b-866a-535b375b54da" />
 
 ### Query 3: Top 10 Produk Terlaris (Horizontal Bar Chart)
 
@@ -187,6 +195,10 @@ LIMIT 10;
 ```
 
 Menampilkan 10 produk dengan frekuensi pemesanan tertinggi sebagai insight untuk keputusan stocking dan promosi.
+
+Visualisasi :
+
+<img width="1352" height="352" alt="image" src="https://github.com/user-attachments/assets/26632137-015c-4737-aea7-4fadf5438b0b" />
 
 ---
 
@@ -268,22 +280,24 @@ Setelah terhubung, buat pertanyaan baru (New Question) menggunakan query SQL yan
 
 Tampilan Graph View dari Airflow Web UI yang menunjukkan struktur dan dependensi antar task dalam DAG `orders_realtime_pipeline`.
 
-![Airflow DAG Graph](./assets/airflow_dag.png)
+<img width="1828" height="923" alt="image" src="https://github.com/user-attachments/assets/ede83494-583a-49f5-8701-e2d4b52ed6e4" />
 
 ### 2. Airflow Task Execution Logs
 
 Log eksekusi yang menunjukkan seluruh task berhasil dijalankan tanpa error, mencakup output dari proses extract, transform, dan load.
 
-![Airflow Success Logs](./assets/airflow_logs.png)
+<img width="1779" height="887" alt="image" src="https://github.com/user-attachments/assets/daa344ee-92a3-4b81-952b-d7af97c7d87b" />
 
 ### 3. Verifikasi Data di ClickHouse
 
 Hasil query `SELECT * FROM analytics.orders_master LIMIT 10` yang memverifikasi bahwa data telah berhasil dimuat ke warehouse dengan skema yang benar.
 
-![ClickHouse Data Verification](./assets/clickhouse_data.png)
+<img width="1815" height="904" alt="image" src="https://github.com/user-attachments/assets/3bdac310-416c-4d9a-8e8d-39332fe46a74" />
 
 ### 4. Dashboard Metabase
 
 Dashboard lengkap di Metabase yang menampilkan visualisasi tren pesanan per jam, distribusi departemen, dan top 10 produk terlaris.
 
-![Metabase Dashboard](./assets/metabase_dashboard.png)
+<img width="1204" height="652" alt="image" src="https://github.com/user-attachments/assets/dccab8f8-2de5-43b3-8ee5-5fddf808a48a" />
+
+Link to PDF : 
