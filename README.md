@@ -300,4 +300,4 @@ Dashboard lengkap di Metabase yang menampilkan visualisasi tren pesanan per jam,
 
 <img width="1204" height="652" alt="image" src="https://github.com/user-attachments/assets/dccab8f8-2de5-43b3-8ee5-5fddf808a48a" />
 
-Link to PDF : 
+Link to PDF : https://github.com/awafaiq/Task2MCI/blob/main/Metabase%20-%20enterprise%20orders%20analytics%20dashboard.pdf
