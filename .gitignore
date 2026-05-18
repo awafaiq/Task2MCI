@@ -1,0 +1,5 @@
+.env
+__pycache__/
+.pytest_cache/
+data_lake/orders/*.parquet
+data_lake/wikipedia/*.parquet
