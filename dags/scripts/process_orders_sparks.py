@@ -13,10 +13,9 @@ def run_orders_analytics():
     print("Membaca aliran data mentah dari Data Lake...")
     df_raw = spark.read.parquet("file:///opt/airflow/data_lake/orders/")
 
-    # Explode array 'products' menjadi baris individual
     df_exploded = df_raw.withColumn("product_item", F.explode("products"))
 
-    # Mapping kolom sesuai struktur JSON asli dari API
+    # Mapping struktur JSON dari API
     df_extracted = df_exploded.select(
         F.col("order_id").cast("string"),
         F.col("user_id").cast("string"),
@@ -27,10 +26,7 @@ def run_orders_analytics():
         F.col("product_item.add_to_cart_order").cast("int").alias("add_to_cart_order")
     )
 
-    # ---------------------------------------------------------
-    # VALIDATION & THRESHOLDING (MENJAWAB KRITIK SEBELUMNYA)
-    # ---------------------------------------------------------
-    # Batasan Logis add_to_cart_order:
+    # Batasan add_to_cart_order:
     # 1. Lower Bound (>= 1): Urutan barang masuk keranjang dimulai dari angka 1.
     # 2. Upper Bound (<= 70): Secara perilaku belanja retail normal, sangat jarang konsumen 
     #    membeli lebih dari 70 item berbeda dalam sekali transaksi. Nilai > 70 difilter sebagai anomali.
@@ -51,7 +47,7 @@ def run_orders_analytics():
 
     client.execute('CREATE DATABASE IF NOT EXISTS analytics')
     
-    # Buat skema tabel baru yang cocok di ClickHouse
+    # Table for ClickHouse
     client.execute('''
         CREATE TABLE IF NOT EXISTS analytics.orders_master (
             order_id String,

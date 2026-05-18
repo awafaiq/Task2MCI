@@ -16,10 +16,8 @@ def fetch_orders_data():
         response.raise_for_status()
         data = response.json()
         
-        # Asumsi API mengembalikan list of dictionaries
         df = pd.DataFrame(data['orders'])
         
-        # Simpan ke Data Lake lokal dalam format Parquet
         current_time = datetime.now().strftime("%Y%m%d_%H%M%S")
         output_path = f'/opt/airflow/data_lake/orders/raw_orders_{current_time}.parquet'
         os.makedirs(os.path.dirname(output_path), exist_ok=True)
